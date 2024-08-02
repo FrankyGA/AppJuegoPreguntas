@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" id="favicon" href="#.jpg">
+    <title>Juego</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./Styles/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="background-image">
+        <div class="container">
+            <h1 class="mb-4">Pregunta</h1>
+            <p th:text="${question}" class="mb-4"></p>
+            <form action="/answer" method="post" class="mb-4">
+                <div class="form-group">
+                    <input type="text" name="answer" class="form-control" placeholder="Escribe tu respuesta" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+            </form>
+            <p>Puntuación actual: <span th:text="${score}"></span></p>
+            <p>Pregunta número: <span th:text="${questionCount}"></span></p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
